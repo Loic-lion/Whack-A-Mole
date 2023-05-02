@@ -1,0 +1,84 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 600px;
+  height: 750px;
+  background-color: rgb(206, 206, 206);
+  border-radius: 10px;
+  &_game {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 600px;
+    height: 600px;
+    &_hole {
+      box-shadow: inset -1px 4px 20px 0px;
+      display: flex;
+      background-color: rgb(139, 111, 78);
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+    }
+  }
+}
+h1 {
+  font-size: 40px;
+}
+.mole {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  background-color: rgb(126, 66, 48);
+  border-radius: 50%;
+  animation: apparition 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes apparition {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+p {
+  font-size: 30px;
+  display: flex;
+}
+
+button {
+  box-shadow: inset 0px 1px 0px 0px #cf866c;
+  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  background-color: #d0451b;
+  border-radius: 3px;
+  border: 1px solid #942911;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 13px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+  margin-left: 30px;
+}
+button:hover {
+  background: linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+  background-color: #bc3315;
+}
+button:active {
+  position: relative;
+  top: 1px;
+}
