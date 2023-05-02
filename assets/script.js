@@ -14,7 +14,7 @@ function start() {
     gameStarted = true;
 
     setInterval(() => {
-      ///////retire les evenlistener//////
+      ///////retire les events listener//////
       cells.forEach((cell) => {
         cell.removeEventListener("click", handleCellClick);
       });
