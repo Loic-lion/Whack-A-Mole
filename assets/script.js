@@ -1,6 +1,7 @@
 const cells = document.querySelectorAll(".container_game_hole");
 const scoreEl = document.querySelector("#score");
 const startBtn = document.querySelector("#buton_start");
+const mole = document.querySelector(".mole");
 
 let score = 0;
 let currentPos;
@@ -10,19 +11,14 @@ startBtn.addEventListener("click", start);
 
 function start() {
   if (!gameStarted) {
-    // only start the game if it hasn't already started
     gameStarted = true;
-    //////clean les trous de la taupe/////
-    cells.forEach((cell) => {
-      cell.innerHTML = "";
-    });
-
-    ////// ajoute la taupe dans un trou random/////
-    currentPos = Math.floor(Math.random() * 9);
-    cells[currentPos].innerHTML =
-      '<div class="mole"><span class= "mole_face">°_°</span></div>';
 
     setInterval(() => {
+      ///////retire les evenlistener//////
+      cells.forEach((cell) => {
+        cell.removeEventListener("click", handleCellClick);
+      });
+
       //////clean les trous de la taupe/////
       cells.forEach((cell) => {
         cell.innerHTML = "";
@@ -32,6 +28,17 @@ function start() {
       currentPos = Math.floor(Math.random() * 9);
       cells[currentPos].innerHTML =
         '<div class="mole"> <span class= "mole_face">°_°</span> </div>';
+      ///////ajoute les events listener////////
+      cells.forEach((cell) => {
+        cell.addEventListener("click", handleCellClick, { once: true });
+      });
     }, 1000);
+  }
+}
+
+function handleCellClick() {
+  if (parseInt(this.getAttribute("data-index")) === currentPos) {
+    score++;
+    scoreEl.innerHTML = score;
   }
 }
