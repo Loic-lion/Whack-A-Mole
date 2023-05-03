@@ -37,6 +37,7 @@ body {
     width: 250px;
     height: 50px;
     box-shadow: 0px 3px 6px;
+    font-family: Arial;
   }
 }
 h1 {
@@ -61,7 +62,7 @@ h1 {
     rgba(126, 66, 48, 1) 100%
   );
   border-radius: 50%;
-  animation: apparition 1s ease 0s 1 normal forwards;
+  animation: apparition 0.6s ease 0s 1 normal forwards;
 }
 
 @keyframes apparition {

@@ -10,7 +10,7 @@ let gameStarted = false;
 const limiteTimeDown = 600;
 const limiteTimeUp = 1000;
 
-const randomTime =
+let randomTime =
   Math.floor(Math.random() * (limiteTimeUp - limiteTimeDown + 1)) +
   limiteTimeDown;
 
@@ -50,6 +50,6 @@ function handleCellClick() {
   }
 }
 ////////////////Randomisation du pop//////////////////////
-setInterval(function () {
-  var randomTime = Math.floor(Math.random() * 401) + 600;
-}, 500);
+// setInterval(function () {
+//   var randomTime = Math.floor(Math.random() * 401) + 600;
+// }, 500);
