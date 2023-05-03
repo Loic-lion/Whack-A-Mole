@@ -50,20 +50,32 @@ h1 {
   justify-content: center;
   color: white;
   font-size: 40px;
+  box-shadow: 0px 3px 6px black;
   align-items: center;
   width: 180px;
   height: 180px;
-  background-color: rgb(126, 66, 48);
+  background: rgb(207, 119, 92);
+  background: radial-gradient(
+    circle,
+    rgba(207, 119, 92, 1) 45%,
+    rgba(126, 66, 48, 1) 100%
+  );
   border-radius: 50%;
-  animation: apparition 0.5s ease 0s 1 normal forwards;
+  animation: apparition 1s ease 0s 1 normal forwards;
 }
 
 @keyframes apparition {
   0% {
     transform: scale(0);
   }
-  100% {
+  50% {
     transform: scale(1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }
 
