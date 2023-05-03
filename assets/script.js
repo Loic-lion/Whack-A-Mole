@@ -7,6 +7,13 @@ let score = 0;
 let currentPos;
 let gameStarted = false;
 
+const limiteTimeDown = 600;
+const limiteTimeUp = 1000;
+
+const randomTime =
+  Math.floor(Math.random() * (limiteTimeUp - limiteTimeDown + 1)) +
+  limiteTimeDown;
+
 startBtn.addEventListener("click", start);
 
 function start() {
@@ -32,7 +39,7 @@ function start() {
       cells.forEach((cell) => {
         cell.addEventListener("click", handleCellClick, { once: true });
       });
-    }, 1000);
+    }, randomTime);
   }
 }
 
@@ -42,3 +49,7 @@ function handleCellClick() {
     scoreEl.innerHTML = score;
   }
 }
+////////////////Randomisation du pop//////////////////////
+setInterval(function () {
+  var randomTime = Math.floor(Math.random() * 401) + 600;
+}, 500);
